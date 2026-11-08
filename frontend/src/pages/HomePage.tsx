@@ -5,9 +5,6 @@ function HomePage() {
   return (
     <div className="w-full space-y-12">
       <section className="w-full rounded-3xl border border-space-cadet/10 bg-white px-6 py-12 text-center shadow-sm sm:px-12 sm:py-16">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-space-cadet/60">
-          Projet universitaire
-        </p>
         <h1 className="text-3xl font-bold tracking-tight text-space-cadet sm:text-5xl">
           Bienvenue sur KAKO
         </h1>
