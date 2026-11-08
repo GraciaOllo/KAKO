@@ -1,6 +1,13 @@
 import { ShoppingBag } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `rounded-full px-4 py-2 text-sm font-medium transition ${
+    isActive
+      ? "bg-gargoyle-gas text-space-cadet"
+      : "text-space-cadet/75 hover:bg-alice-blue"
+  }`;
+
 function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col bg-alice-blue">
@@ -14,19 +21,12 @@ function AppLayout() {
             <ShoppingBag size={22} aria-hidden="true" />
             KAKO
           </NavLink>
-          <nav aria-label="Navigation principale">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-sm font-medium transition ${
-                  isActive
-                    ? "bg-gargoyle-gas text-space-cadet"
-                    : "text-space-cadet/75 hover:bg-alice-blue"
-                }`
-              }
-            >
+          <nav aria-label="Navigation principale" className="flex gap-2">
+            <NavLink to="/" end className={navLinkClass}>
               Accueil
+            </NavLink>
+            <NavLink to="/catalogue" className={navLinkClass}>
+              Catalogue
             </NavLink>
           </nav>
         </div>
